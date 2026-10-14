@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在跳转...</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            background: #dcdcdc;
+        }
+        /* 默认（手机 / 小窗口）：图片完整显示，刚好适应窗口，不裁剪、不滚动 */
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100vw;
+            max-height: 100vh;
+            max-height: 100dvh;
+            object-fit: contain;
+        }
+        /* 电脑端（宽且高的窗口）：图片按窗口宽度铺满，纵向滚动查看完整图片 */
+        @media (min-width: 769px) and (min-height: 501px) {
+            body {
+                min-height: 0;
+                align-items: flex-start;
+            }
+            img {
+                width: 100%;
+                max-width: 100%;
+                max-height: none;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="banner.png" alt="即将跳转">
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://www.fafu.edu.cn/mainm.htm";
+        }, 2000);
+    </script>
+</body>
+</html>
